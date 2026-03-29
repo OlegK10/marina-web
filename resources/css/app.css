@@ -1,0 +1,50 @@
+@import "tailwindcss" source("../views/**/*.blade.php", "../js/**/*.ts");
+
+@theme {
+    --color-brand-50: #fff1f2;
+    --color-brand-100: #ffe4e6;
+    --color-brand-200: #fecdd3;
+    --color-brand-300: #fda4af;
+    --color-brand-400: #fb7185;
+    --color-brand-500: #f43f5e;
+    --color-brand-600: #e11d48;
+    --color-brand-700: #be123c;
+    --color-brand-800: #9f1239;
+    --color-brand-900: #881337;
+    --font-family-sans: 'Inter', system-ui, -apple-system, sans-serif;
+    --font-family-display: 'Playfair Display', Georgia, serif;
+}
+
+/* Smooth scroll */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom animations */
+@keyframes fade-in-up {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out forwards;
+}
+
+/* Typography for blog content */
+.prose-brand h2 {
+    color: var(--color-brand-800);
+}
+
+.prose-brand a {
+    color: var(--color-brand-600);
+}
+
+.prose-brand a:hover {
+    color: var(--color-brand-700);
+}
