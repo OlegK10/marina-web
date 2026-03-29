@@ -1,7 +1,7 @@
 [phases.setup]
 nixPkgs = [
   "php",
-  "php81Extensions.pdo_mysql",
+  "php81Extensions.pdo_mysql",  # toto je klíčové!
   "php81Extensions.mbstring",
   "php81Extensions.openssl",
   "php81Packages.composer"
@@ -9,7 +9,10 @@ nixPkgs = [
 
 [phases.build]
 cmds = [
-  "composer install --no-dev --optimize-autoloader"
+  "composer install --no-dev --optimize-autoloader",
+  "php artisan config:clear",
+  "php artisan route:clear",
+  "php artisan view:clear"
 ]
 
 [start]
