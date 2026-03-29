@@ -1,27 +1,27 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="cs" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('title', 'Marina — Business Coach & Marketing Mentor')</title>
-    <meta name="description" content="@yield('description', 'Business coaching & marketing strategy for ambitious entrepreneurs ready to scale. Work with Marina to transform your brand and grow your business.')">
+    <title>@yield('title', 'Marina — Mentoring & Osobní rozvoj')</title>
+    <meta name="description" content="@yield('description', 'Mentoring, koučování a osobní rozvoj. Marina vám pomůže najít pevnější oporu v sobě.')">
     <meta name="author" content="Marina">
 
     <!-- Open Graph -->
     <meta property="og:type" content="website">
-    <meta property="og:title" content="@yield('og_title', 'Marina — Business Coach & Marketing Mentor')">
-    <meta property="og:description" content="@yield('og_description', 'Business coaching & marketing strategy for ambitious entrepreneurs ready to scale.')">
+    <meta property="og:title" content="@yield('og_title', 'Marina — Mentoring & Osobní rozvoj')">
+    <meta property="og:description" content="@yield('og_description', 'Mentoring, koučování a osobní rozvoj. Marina vám pomůže najít pevnější oporu v sobě.')">
     <meta property="og:image" content="@yield('og_image', 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&q=80')">
     <meta property="og:url" content="{{ url()->current() }}">
     <meta property="og:site_name" content="Marina">
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="@yield('og_title', 'Marina — Business Coach & Marketing Mentor')">
-    <meta name="twitter:description" content="@yield('og_description', 'Business coaching & marketing strategy for ambitious entrepreneurs ready to scale.')">
+    <meta name="twitter:title" content="@yield('og_title', 'Marina — Mentoring & Osobní rozvoj')">
+    <meta name="twitter:description" content="@yield('og_description', 'Mentoring, koučování a osobní rozvoj. Marina vám pomůže najít pevnější oporu v sobě.')">
     <meta name="twitter:image" content="@yield('og_image', 'https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=1200&q=80')">
 
     <!-- Canonical -->
@@ -58,18 +58,18 @@
 
                 <!-- Desktop Navigation -->
                 <div class="hidden lg:flex items-center gap-8">
-                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">Home</a>
-                    <a href="/about" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">About</a>
-                    <a href="/services" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">Services</a>
-                    <a href="/products" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">Products</a>
+                    <a href="/" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">Domů</a>
+                    <a href="/about" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">O mně</a>
+                    <a href="/services" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">Služby</a>
+                    <a href="/products" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">Produkty</a>
                     <a href="/blog" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">Blog</a>
-                    <a href="/contact" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">Contact</a>
+                    <a href="/contact" class="text-sm font-medium text-gray-700 hover:text-rose-600 transition-colors">Kontakt</a>
                 </div>
 
                 <!-- Desktop CTA -->
                 <div class="hidden lg:flex items-center gap-4">
                     <a href="/contact" class="inline-flex items-center px-5 py-2.5 bg-rose-600 text-white text-sm font-semibold rounded-full hover:bg-rose-700 transition-colors shadow-sm">
-                        Book a Call
+                        Rezervovat hovor
                     </a>
                 </div>
 
@@ -87,15 +87,15 @@
             <!-- Mobile Navigation -->
             <div x-show="mobileOpen" x-cloak x-transition:enter="transition ease-out duration-200" x-transition:enter-start="opacity-0 -translate-y-2" x-transition:enter-end="opacity-100 translate-y-0" x-transition:leave="transition ease-in duration-150" x-transition:leave-start="opacity-100 translate-y-0" x-transition:leave-end="opacity-0 -translate-y-2" class="lg:hidden pb-4 border-t border-rose-100/50">
                 <div class="flex flex-col gap-1 pt-4">
-                    <a href="/" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">Home</a>
-                    <a href="/about" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">About</a>
-                    <a href="/services" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">Services</a>
-                    <a href="/products" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">Products</a>
+                    <a href="/" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">Domů</a>
+                    <a href="/about" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">O mně</a>
+                    <a href="/services" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">Služby</a>
+                    <a href="/products" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">Produkty</a>
                     <a href="/blog" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">Blog</a>
-                    <a href="/contact" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">Contact</a>
+                    <a href="/contact" class="px-4 py-2.5 text-sm font-medium text-gray-700 hover:text-rose-600 hover:bg-rose-50 rounded-lg transition-colors">Kontakt</a>
                     <div class="px-4 pt-2">
                         <a href="/contact" class="inline-flex items-center justify-center w-full px-5 py-2.5 bg-rose-600 text-white text-sm font-semibold rounded-full hover:bg-rose-700 transition-colors">
-                            Book a Call
+                            Rezervovat hovor
                         </a>
                     </div>
                 </div>
@@ -122,7 +122,7 @@
                         <span class="font-serif text-2xl font-bold text-white">Marina</span>
                     </a>
                     <p class="mt-4 text-sm leading-relaxed text-gray-400">
-                        Empowering ambitious entrepreneurs to build thriving businesses through strategic coaching, marketing mentorship, and proven growth frameworks.
+                        Práce se sebou &bull; vztahy &bull; peníze &bull; vnitřní nastavení. Pomáhám lidem zorientovat se v tom, co cítí, proč se zasekávají a jak z toho ven.
                     </p>
                     <!-- Social Links -->
                     <div class="mt-6 flex items-center gap-4">
@@ -146,40 +146,40 @@
 
                 <!-- Quick Links -->
                 <div>
-                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider">Quick Links</h3>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider">Rychlé odkazy</h3>
                     <ul class="mt-4 space-y-3">
-                        <li><a href="/about" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">About Marina</a></li>
-                        <li><a href="/services" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Services</a></li>
-                        <li><a href="/products" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Digital Products</a></li>
+                        <li><a href="/about" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">O Marině</a></li>
+                        <li><a href="/services" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Služby</a></li>
+                        <li><a href="/products" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Digitální produkty</a></li>
                         <li><a href="/blog" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Blog</a></li>
-                        <li><a href="/contact" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Contact</a></li>
-                        <li><a href="/privacy-policy" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Privacy Policy</a></li>
-                        <li><a href="/terms" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Terms of Service</a></li>
+                        <li><a href="/contact" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Kontakt</a></li>
+                        <li><a href="/privacy-policy" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Ochrana soukromí</a></li>
+                        <li><a href="/terms" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Obchodní podmínky</a></li>
                     </ul>
                 </div>
 
                 <!-- Services -->
                 <div>
-                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider">Services</h3>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider">Služby</h3>
                     <ul class="mt-4 space-y-3">
-                        <li><a href="/services#consultation" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">1:1 Consultation</a></li>
+                        <li><a href="/services#consultation" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">1:1 Konzultace</a></li>
                         <li><a href="/services#audit" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Instagram Audit</a></li>
-                        <li><a href="/services#mentoring" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Mentoring Program</a></li>
-                        <li><a href="/products" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Online Courses</a></li>
-                        <li><a href="/products" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Digital Templates</a></li>
+                        <li><a href="/services#mentoring" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Mentoringový program</a></li>
+                        <li><a href="/products" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Online kurzy</a></li>
+                        <li><a href="/products" class="text-sm text-gray-400 hover:text-rose-400 transition-colors">Digitální šablony</a></li>
                     </ul>
                 </div>
 
                 <!-- Newsletter -->
                 <div>
-                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider">Stay in Touch</h3>
-                    <p class="mt-4 text-sm text-gray-400">Get weekly tips on marketing, branding, and business growth delivered to your inbox.</p>
+                    <h3 class="text-sm font-semibold text-white uppercase tracking-wider">Zůstaňte v kontaktu</h3>
+                    <p class="mt-4 text-sm text-gray-400">Získejte pravidelné tipy na osobní rozvoj, sebevědomí a budování lepších vztahů.</p>
                     <form action="/newsletter/subscribe" method="POST" class="mt-4">
                         @csrf
                         <div class="flex flex-col gap-3">
-                            <input type="email" name="email" required placeholder="Your email address" class="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent">
+                            <input type="email" name="email" required placeholder="Váš e-mail" class="w-full px-4 py-2.5 bg-gray-800 border border-gray-700 rounded-lg text-sm text-white placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-rose-500 focus:border-transparent">
                             <button type="submit" class="w-full px-4 py-2.5 bg-rose-600 text-white text-sm font-semibold rounded-lg hover:bg-rose-700 transition-colors">
-                                Subscribe
+                                Odebírat
                             </button>
                         </div>
                     </form>
@@ -188,10 +188,10 @@
 
             <!-- Bottom bar -->
             <div class="py-6 border-t border-gray-800 flex flex-col sm:flex-row items-center justify-between gap-4">
-                <p class="text-sm text-gray-500">&copy; {{ date('Y') }} Marina. All rights reserved.</p>
+                <p class="text-sm text-gray-500">&copy; {{ date('Y') }} Marina. Všechna práva vyhrazena.</p>
                 <div class="flex items-center gap-6">
-                    <a href="/privacy-policy" class="text-sm text-gray-500 hover:text-rose-400 transition-colors">Privacy Policy</a>
-                    <a href="/terms" class="text-sm text-gray-500 hover:text-rose-400 transition-colors">Terms</a>
+                    <a href="/privacy-policy" class="text-sm text-gray-500 hover:text-rose-400 transition-colors">Ochrana soukromí</a>
+                    <a href="/terms" class="text-sm text-gray-500 hover:text-rose-400 transition-colors">Podmínky</a>
                     <a href="/cookie-policy" class="text-sm text-gray-500 hover:text-rose-400 transition-colors">Cookies</a>
                 </div>
             </div>
