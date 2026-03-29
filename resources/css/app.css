@@ -1,4 +1,4 @@
-@import "tailwindcss" source("../views/**/*.blade.php", "../js/**/*.ts");
+@import "tailwindcss";
 
 @theme {
     --color-brand-50: #fff1f2;
