@@ -1,15 +1,2 @@
-[phases.setup]
-nixPkgs = ["php83", "php83Extensions.pdo_mysql", "php83Extensions.mysqlnd", "php83Extensions.mbstring", "php83Extensions.openssl", "php83Extensions.tokenizer", "php83Extensions.xml", "php83Extensions.curl", "php83Extensions.dom", "php83Extensions.fileinfo", "php83Extensions.ctype", "php83Packages.composer", "nodejs_20", "npm-9_x"]
-
-[phases.build]
-cmds = [
-  "composer install --no-dev --optimize-autoloader",
-  "npm ci",
-  "npm run build",
-  "php artisan config:clear",
-  "php artisan route:clear",
-  "php artisan view:clear"
-]
-
-[start]
-cmd = "php artisan migrate --force && php artisan serve --host=0.0.0.0 --port=${PORT:-8080}"
+# Railway uses Dockerfile when present - this file is kept as fallback
+# To force Dockerfile usage, set NIXPACKS_NO_CACHE=1 in Railway settings
