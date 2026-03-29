@@ -1,0 +1,16 @@
+[phases.setup]
+nixPkgs = [
+  "php",
+  "php81Extensions.pdo_mysql",
+  "php81Extensions.mbstring",
+  "php81Extensions.openssl",
+  "php81Packages.composer"
+]
+
+[phases.build]
+cmds = [
+  "composer install --no-dev --optimize-autoloader"
+]
+
+[start]
+cmd = "vendor/bin/heroku-php-apache2 public/"

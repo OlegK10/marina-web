@@ -1,9 +1,7 @@
 <?php
 
 use App\Http\Controllers\BlogController;
-use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CourseController;
-use App\Http\Controllers\NewsletterController;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\ServiceController;
@@ -31,8 +29,3 @@ Route::get('/services/{slug}', [ServiceController::class, 'show'])->name('servic
 Route::get('/blog', [BlogController::class, 'index'])->name('blog.index');
 Route::get('/blog/{slug}', [BlogController::class, 'show'])->name('blog.show');
 
-// Newsletter
-Route::post('/newsletter/subscribe', [NewsletterController::class, 'subscribe'])->name('newsletter.subscribe');
-
-// Checkout (API-style)
-Route::post('/api/checkout/create-invoice', [CheckoutController::class, 'createInvoice'])->name('checkout.create-invoice');

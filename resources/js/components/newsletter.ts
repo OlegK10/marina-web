@@ -17,7 +17,7 @@ export function initNewsletterForms(): void {
             }
 
             try {
-                const response = await window.axios.post('/newsletter/subscribe', {
+                const response = await window.axios.post('/api/newsletter/subscribe', {
                     email: emailInput.value,
                 });
 

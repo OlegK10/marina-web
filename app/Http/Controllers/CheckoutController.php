@@ -9,12 +9,10 @@ use App\Models\Service;
 use App\Services\StripeInvoiceService;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Http\Request;
+use Stripe\Exception\ApiErrorException;
 
 class CheckoutController extends Controller
 {
-    /**
-     * Create a Stripe invoice for a product, course, or service.
-     */
     public function createInvoice(Request $request): JsonResponse
     {
         $validated = $request->validate([
@@ -24,7 +22,6 @@ class CheckoutController extends Controller
             'customer_name' => 'required|string|max:255',
         ]);
 
-        // Resolve the item model based on type
         $item = match ($validated['type']) {
             'product' => Product::active()->findOrFail($validated['item_id']),
             'course' => Course::active()->findOrFail($validated['item_id']),
@@ -34,16 +31,21 @@ class CheckoutController extends Controller
         $description = ucfirst($validated['type']) . ': ' . $item->name;
         $amountInCents = (int) round($item->price * 100);
 
-        // Create Stripe invoice
-        $stripeService = new StripeInvoiceService();
-        $invoiceData = $stripeService->createInvoice(
-            customerEmail: $validated['customer_email'],
-            customerName: $validated['customer_name'],
-            description: $description,
-            amountInCents: $amountInCents,
-        );
+        try {
+            $stripeService = new StripeInvoiceService();
+            $invoiceData = $stripeService->createInvoice(
+                customerEmail: $validated['customer_email'],
+                customerName: $validated['customer_name'],
+                description: $description,
+                amountInCents: $amountInCents,
+            );
+        } catch (ApiErrorException $e) {
+            return response()->json([
+                'success' => false,
+                'message' => 'Payment processing error. Please try again later.',
+            ], 502);
+        }
 
-        // Create an Order record
         $order = Order::create([
             'user_email' => $validated['customer_email'],
             'user_name' => $validated['customer_name'],
