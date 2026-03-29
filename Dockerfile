@@ -27,17 +27,17 @@ WORKDIR /app
 COPY composer.json composer.lock ./
 RUN composer install --no-dev --optimize-autoloader --no-scripts
 
-# Copy package files and install Node deps + build
+# Copy package files and install Node deps
 COPY package.json package-lock.json* ./
 RUN npm ci 2>/dev/null || npm install
-COPY vite.config.js tsconfig.json ./
-COPY resources ./resources
-RUN npm run build
 
-# Copy rest of application
+# Copy all application files
 COPY . .
 
-# Re-run composer scripts (post-autoload-dump etc.)
+# Build frontend assets (after COPY so public/build stays)
+RUN npm run build
+
+# Re-run composer scripts
 RUN composer dump-autoload --optimize
 
 # Set permissions
